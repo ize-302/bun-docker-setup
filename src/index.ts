@@ -1,7 +1,7 @@
 import figlet from "figlet";
 
 const server = Bun.serve({
-  port: 3000,
+  port: process.env.PORT ?? 8080,
   fetch() {
     const body = figlet.textSync("Bun!");
     return new Response(body);
