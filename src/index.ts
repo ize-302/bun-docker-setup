@@ -1,11 +1,13 @@
 import figlet from "figlet";
+import { Elysia } from "elysia";
 
-const server = Bun.serve({
-  port: process.env.PORT ?? 8080,
-  fetch() {
-    const body = figlet.textSync("Bunsoir!");
-    return new Response(body);
-  },
+const app = new Elysia().get("/", () => {
+  const body = figlet.textSync("Bun!");
+  return new Response(body);
 });
 
-console.log(`Listening on http://localhost:${server.port} ...`);
+app.listen(process.env.PORT ?? 8080);
+
+console.log(
+  `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
+);

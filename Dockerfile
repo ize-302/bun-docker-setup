@@ -17,4 +17,4 @@ COPY tsconfig.json tsconfig.json
 ENV PORT=8000
 EXPOSE 8000
 
-CMD ["bun", "start"]
+CMD ["bun", "start:dev"]
