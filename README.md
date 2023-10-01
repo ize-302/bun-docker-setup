@@ -22,7 +22,11 @@ bun run index.ts
 
 #### Running container
 
-`docker run -p 5000:8000 <TAG_NAME>`
+`docker run -p 5000:8000 --name <CUSTOM_CONTAINER_NAME> <TAG_NAME>`
+
+### Using docker compose
+
+`docker compose up --build -d`
 
 visit localhost:5000 in your web browser
 

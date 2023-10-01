@@ -5,16 +5,16 @@ FROM oven/bun:latest
 WORKDIR /app
 
 ## copy files
-COPY package.json ./
-COPY bun.lockb ./
+COPY package.json package.json
+COPY bun.lockb bun.lockb
 
 RUN bun install
 
 # copy source code
-COPY . .
+COPY src src
+COPY tsconfig.json tsconfig.json
 
 ENV PORT=8000
-
 EXPOSE 8000
 
 CMD ["bun", "start"]
